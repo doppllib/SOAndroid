@@ -3,9 +3,8 @@
 Tactically, this sample app shows the latest 15 questions from
 the `android` tag on Stack Overflow in a `RecyclerView`.
 
-Strategically, this sample app is set up to use
-[Doppl](http://doppl.co), so the network logic can be reused
-on iOS.
+Strategically, this sample app is designed to have part of its
+logic converted to work on iOS, using [Doppl](http://doppl.co).
 
 ## License
 The code in this project is licensed under the Apache
