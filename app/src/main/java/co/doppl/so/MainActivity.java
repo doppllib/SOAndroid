@@ -28,6 +28,18 @@ import co.doppl.so.arch.Question;
 import co.doppl.so.arch.QuestionsViewModel;
 import co.doppl.so.databinding.RowBinding;
 
+/**
+ * The UI for this app. Revel in its glory.
+ * .
+ * .
+ * .
+ * OK, you can stop reveling now.
+ * .
+ * .
+ * .
+ * No, seriously, this UI is pretty basic. Your revelage is somewhat over the
+ * top at this point. Please keep calm and code on.
+ */
 public class MainActivity extends FragmentActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {

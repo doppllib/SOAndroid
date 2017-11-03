@@ -11,10 +11,26 @@
 
 package co.doppl.so.arch;
 
+/**
+ * Model object for a single Stack Overflow question, assembled from Stack Exchange
+ * API response
+ */
 public class Question {
+  /**
+   * The title of the question, as seen in lists
+   */
   public final String title;
+  /**
+   * The URL of the avatar of the person who asked this question
+   */
   public final String ownerAvatar;
 
+  /**
+   * Constructor. `Nuff said.
+   *
+   * @param title the title of the question, as seen in lists
+   * @param ownerAvatar the URL of the question-asker's avatar
+   */
   Question(String title, String ownerAvatar) {
     this.title=title;
     this.ownerAvatar=ownerAvatar;

@@ -21,10 +21,23 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Manages our interaction with back-end operations, in this case with the
+ * Stack Exchange server via its REST API.
+ */
 public class Repository {
+  /**
+   * Singleton instance of our repository
+   */
   private static Repository INSTANCE=new Repository();
+  /**
+   * Configured interface for accessing the Stack Exchange API
+   */
   private final SOInterface so;
 
+  /**
+   * @return the singleton instance of the repository
+   */
   public static Repository get() {
     return(INSTANCE);
   }
@@ -40,6 +53,12 @@ public class Repository {
     so=retrofit.create(SOInterface.class);
   }
 
+  /**
+   * Returns a fresh result from the Stack Exchange API, unwrapping the
+   * response into a collection of model objects (Question).
+   *
+   * @return a list of model objects, wrapped in an Rx Single
+   */
   public Single<List<Question>> current() {
     return(so.recent().map(response -> {
       List<Question> result=new ArrayList<>(response.items.size());

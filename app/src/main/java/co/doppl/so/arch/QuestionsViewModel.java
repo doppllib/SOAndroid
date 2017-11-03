@@ -16,9 +16,20 @@ import org.reactivestreams.Publisher;
 import java.util.List;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * ViewModel for the questions that we get back from the Stack Exchange API.
+ */
 public class QuestionsViewModel extends ViewModel {
+  /**
+   * The most recently retrieved list of questions. We use Publisher here
+   * so that we can use LiveDataReactiveStreams in the UI layer, which requires
+   * a Publisher.
+   */
   private final Publisher<List<Question>> current;
 
+  /**
+   * Constructor. 'Nuff said.
+   */
   public QuestionsViewModel() {
     current=Repository.get()
       .current()
@@ -28,6 +39,11 @@ public class QuestionsViewModel extends ViewModel {
       .share();
   }
 
+  /**
+   * Getter for current field.
+   *
+   * @return the most recently retrieved list of questions
+   */
   public Publisher<List<Question>> current() {
     return current;
   }
