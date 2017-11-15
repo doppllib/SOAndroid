@@ -1,0 +1,10 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/doppllib"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = /Users/touchlab/Downloads/doppldist2.0.4/frameworks/JRE.framework/Headers /Users/touchlab/Downloads/doppldist2.0.4/frameworks/JavaxInject.framework/Headers /Users/touchlab/Downloads/doppldist2.0.4/frameworks/JSR305.framework/Headers /Users/touchlab/Downloads/doppldist2.0.4/frameworks/JUnit.framework/Headers /Users/touchlab/Downloads/doppldist2.0.4/frameworks/Mockito.framework/Headers /Users/touchlab/Downloads/doppldist2.0.4/frameworks/Xalan.framework/Headers /Users/touchlab/Downloads/doppldist2.0.4/frameworks/Guava.framework/Headers
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/doppllib/doppllib.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "doppllib"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods

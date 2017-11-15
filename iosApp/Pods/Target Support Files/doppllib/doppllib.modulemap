@@ -1,0 +1,6 @@
+framework module doppllib {
+  umbrella header "doppllib-umbrella.h"
+
+  export *
+  module * { export * }
+}
