@@ -13,10 +13,9 @@ package co.doppl.so.arch;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import co.doppl.so.api.SOInterface;
 import io.reactivex.Single;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Function;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -61,10 +60,10 @@ public class Repository {
    */
   public Single<List<Question>> current() {
     return(so.recent().map(response -> {
-      List<Question> result=new ArrayList<>(response.items.size());
+      List<Question> result=new ArrayList<>(response.getItems().size());
 
-      for (SOInterface.Item item : response.items) {
-        result.add(new Question(item.title, item.owner.profileImage));
+      for (SOInterface.Item item : response.getItems()) {
+        result.add(new Question(item.getTitle(), item.getOwner().profileImage));
       }
 
       return result;

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A20E3DBD75BD9F9FD8ADC57 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376171BC4437098EDC490E84 /* Pods_iosApp.framework */; };
 		ED4E5A4A1FBB950500F9B748 /* JavaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E5A491FBB950500F9B748 /* JavaUtils.swift */; };
+		EDF8FAD21FBCE6E00013501F /* prefixes.properties in Resources */ = {isa = PBXBuildFile; fileRef = EDF8FAD11FBCE6E00013501F /* prefixes.properties */; };
 		EDFA4CEE1FBA3AD400C0EE73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA4CED1FBA3AD400C0EE73 /* AppDelegate.swift */; };
 		EDFA4CF01FBA3AD400C0EE73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA4CEF1FBA3AD400C0EE73 /* ViewController.swift */; };
 		EDFA4CF31FBA3AD400C0EE73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFA4CF11FBA3AD400C0EE73 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		5FB088D27A0C193924B2ABB1 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A4D90A4AB1A60D4C5277EDCD /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		ED4E5A491FBB950500F9B748 /* JavaUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaUtils.swift; sourceTree = "<group>"; };
+		EDF8FAD11FBCE6E00013501F /* prefixes.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = prefixes.properties; path = ../../app/build/j2objcSrcGenMain/prefixes.properties; sourceTree = "<group>"; };
 		EDFA4CEA1FBA3AD400C0EE73 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFA4CED1FBA3AD400C0EE73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDFA4CEF1FBA3AD400C0EE73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		EDFA4CEC1FBA3AD400C0EE73 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				EDF8FAD11FBCE6E00013501F /* prefixes.properties */,
 				EDFA4CED1FBA3AD400C0EE73 /* AppDelegate.swift */,
 				EDFA4CEF1FBA3AD400C0EE73 /* ViewController.swift */,
 				EDFA4CF11FBA3AD400C0EE73 /* Main.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF8FAD21FBCE6E00013501F /* prefixes.properties in Resources */,
 				EDFA4CF81FBA3AD400C0EE73 /* LaunchScreen.storyboard in Resources */,
 				EDFA4CF51FBA3AD400C0EE73 /* Assets.xcassets in Resources */,
 				EDFA4CF31FBA3AD400C0EE73 /* Main.storyboard in Resources */,

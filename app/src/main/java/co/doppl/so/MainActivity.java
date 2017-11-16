@@ -11,7 +11,6 @@
 
 package co.doppl.so;
 
-import android.arch.lifecycle.LiveDataReactiveStreams;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;
@@ -22,8 +21,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import com.squareup.picasso.Picasso;
+
 import java.util.List;
+
 import co.doppl.so.arch.Question;
 import co.doppl.so.arch.QuestionsViewModel;
 import co.doppl.so.databinding.RowBinding;
@@ -40,7 +42,10 @@ import co.doppl.so.databinding.RowBinding;
  * No, seriously, this UI is pretty basic. Your revelage is somewhat over the
  * top at this point. Please keep calm and code on.
  */
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements QuestionsViewModel.Host {
+
+  final QuestionsAdapter adapter=new QuestionsAdapter();
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -52,15 +57,18 @@ public class MainActivity extends FragmentActivity {
     rv.addItemDecoration(new DividerItemDecoration(this,
       LinearLayoutManager.VERTICAL));
 
-    final QuestionsAdapter adapter=new QuestionsAdapter();
-
     rv.setAdapter(adapter);
 
-    QuestionsViewModel vm=
+    final QuestionsViewModel vm=
       ViewModelProviders.of(this).get(QuestionsViewModel.class);
+    vm.register(this);
 
-    LiveDataReactiveStreams.fromPublisher(vm.current())
-      .observe(this, adapter::setQuestions);
+  }
+
+  @Override
+  public void setQuestions(List<Question> questions)
+  {
+    adapter.setQuestions(questions);
   }
 
   private class QuestionsAdapter extends RecyclerView.Adapter<RowHolder> {

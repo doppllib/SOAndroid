@@ -36,11 +36,31 @@ public interface SOInterface {
     /**
      * Title of the question, as seen in lists of questions, etc.
      */
-    public final String title=null;
+    public String title;
     /**
      * Person asking the question
      */
-    public final Owner owner=null;
+    public Owner owner;
+
+    public String getTitle()
+    {
+      return title;
+    }
+
+    public Owner getOwner()
+    {
+      return owner;
+    }
+
+    public void setTitle(String title)
+    {
+      this.title = title;
+    }
+
+    public void setOwner(Owner owner)
+    {
+      this.owner = owner;
+    }
 
     @Override
     public String toString() {
@@ -57,7 +77,17 @@ public interface SOInterface {
      * URL to user's avatar
      */
     @SerializedName("profile_image")
-    public final String profileImage=null;
+    public String profileImage;
+
+    public String getProfileImage()
+    {
+      return profileImage;
+    }
+
+    public void setProfileImage(String profileImage)
+    {
+      this.profileImage = profileImage;
+    }
   }
 
   /**
@@ -65,6 +95,17 @@ public interface SOInterface {
    * API response.
    */
   class Response {
-    public final List<Item> items=null;
+
+    public List<Item> getItems()
+    {
+      return items;
+    }
+
+    public void setItems(List<Item> items)
+    {
+      this.items = items;
+    }
+
+    public List<Item> items =null;
   }
 }

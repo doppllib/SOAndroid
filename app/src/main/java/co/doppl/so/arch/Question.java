@@ -25,6 +25,16 @@ public class Question {
    */
   public final String ownerAvatar;
 
+  public String getTitle()
+  {
+    return title;
+  }
+
+  public String getOwnerAvatar()
+  {
+    return ownerAvatar;
+  }
+
   /**
    * Constructor. `Nuff said.
    *

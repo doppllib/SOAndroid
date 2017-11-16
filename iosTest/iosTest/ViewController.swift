@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import testdoppllib
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        CoTouchlabDopplTestingDopplJunitTestHelper.runResource(with: "dopplTests.txt")
     }
 
     override func didReceiveMemoryWarning() {

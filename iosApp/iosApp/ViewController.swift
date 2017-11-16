@@ -24,8 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource, SOAQuestionsViewM
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let viewModel = SOAQuestionsViewModel()
-        viewModel?.register__(with: self)
+        let viewModel: CoDopplSoArchQuestionsViewModel = SOAQuestionsViewModel()
+        viewModel.register__(with: self)
+        tableView.dataSource = self
         
     }
 
@@ -37,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, SOAQuestionsViewM
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         let question: SOAQuestion = questions[indexPath.row]
-        cell.textLabel?.text = question.title_
+        cell.textLabel?.text = question.getTitle()
         return cell
     }
     
@@ -45,14 +46,4 @@ class ViewController: UIViewController, UITableViewDataSource, SOAQuestionsViewM
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }
-}
-
-class RxJConsumer : NSObject, IoReactivexFunctionsConsumer {
-    func accept(withId t: Any!) {
-        
-    }
-    
-    
-    
-    
 }

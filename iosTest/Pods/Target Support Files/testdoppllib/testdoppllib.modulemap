@@ -1,0 +1,6 @@
+framework module testdoppllib {
+  umbrella header "testdoppllib-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+platform :ios, '9.0'
+
+target 'iosTest' do
+    use_frameworks!
+    pod 'testdoppllib', :path => '../app/build'
+end
