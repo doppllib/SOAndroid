@@ -28,37 +28,9 @@ public class QuestionsViewModel extends ViewModel {
   }
 
   /**
-   * The most recently retrieved list of questions. We use Publisher here
-   * so that we can use LiveDataReactiveStreams in the UI layer, which requires
-   * a Publisher.
-   */
-  private final Publisher<List<Question>> current;
-
-  /**
    * The outstanding subscription for model updates, if any
    */
   private Disposable sub;
-
-  /**
-   * Constructor. 'Nuff said.
-   */
-  public QuestionsViewModel() {
-    current=Repository.get()
-      .current()
-      .subscribeOn(Schedulers.io())
-      .toFlowable()
-      .cache()
-      .share();
-  }
-
-  /**
-   * Getter for current field.
-   *
-   * @return the most recently retrieved list of questions
-   */
-  public Publisher<List<Question>> current() {
-    return current;
-  }
 
   /**
    * Register for model updates
