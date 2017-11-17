@@ -15,6 +15,8 @@ import android.arch.lifecycle.ViewModel;
 import org.reactivestreams.Publisher;
 import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -31,6 +33,11 @@ public class QuestionsViewModel extends ViewModel {
    * a Publisher.
    */
   private final Publisher<List<Question>> current;
+
+  /**
+   * The outstanding subscription for model updates, if any
+   */
+  private Disposable sub;
 
   /**
    * Constructor. 'Nuff said.
@@ -59,10 +66,19 @@ public class QuestionsViewModel extends ViewModel {
    * @param host the consumer of the model updates
    */
   public void register(Host host) {
-    Repository.get()
+    sub=Repository.get()
       .current()
       .subscribeOn(Schedulers.io())
       .observeOn(AndroidSchedulers.mainThread())
       .subscribe(host::setQuestions);
+  }
+
+  /**
+   * Unregister from model updates
+   */
+  public void unregister() {
+    if (sub!=null && !sub.isDisposed()) {
+      sub.dispose();
+    }
   }
 }

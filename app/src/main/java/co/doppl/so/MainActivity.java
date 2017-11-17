@@ -40,7 +40,8 @@ import co.doppl.so.databinding.RowBinding;
  * top at this point. Please keep calm and code on.
  */
 public class MainActivity extends FragmentActivity implements QuestionsViewModel.Host {
-  final QuestionsAdapter adapter=new QuestionsAdapter();
+  final private QuestionsAdapter adapter=new QuestionsAdapter();
+  private QuestionsViewModel vm;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +53,17 @@ public class MainActivity extends FragmentActivity implements QuestionsViewModel
     rv.setLayoutManager(new LinearLayoutManager(this));
     rv.addItemDecoration(new DividerItemDecoration(this,
       LinearLayoutManager.VERTICAL));
-
     rv.setAdapter(adapter);
 
-    final QuestionsViewModel vm=
-      ViewModelProviders.of(this).get(QuestionsViewModel.class);
+    vm=ViewModelProviders.of(this).get(QuestionsViewModel.class);
     vm.register(this);
+  }
+
+  @Override
+  protected void onDestroy() {
+    vm.unregister();
+
+    super.onDestroy();
   }
 
   @Override
