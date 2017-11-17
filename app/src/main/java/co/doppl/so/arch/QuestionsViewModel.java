@@ -53,6 +53,11 @@ public class QuestionsViewModel extends ViewModel {
     return current;
   }
 
+  /**
+   * Register for model updates
+   *
+   * @param host the consumer of the model updates
+   */
   public void register(Host host) {
     Repository.get()
       .current()

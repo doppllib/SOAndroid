@@ -36,10 +36,16 @@ public class Question {
     this.ownerAvatar=ownerAvatar;
   }
 
+  /**
+   * @return the title
+   */
   public String getTitle() {
     return title;
   }
 
+  /**
+   * @return the owner's avatar
+   */
   public String getOwnerAvatar() {
     return ownerAvatar;
   }

@@ -42,23 +42,42 @@ public interface SOInterface {
      */
     private Owner owner;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
       return getTitle();
     }
 
+    /**
+     * @return the question title
+     */
     public String getTitle() {
       return title;
     }
 
+    /**
+     * Setter for the question title
+     *
+     * @param title the question title
+     */
     public void setTitle(String title) {
       this.title=title;
     }
 
+    /**
+     * @return the party asking the question
+     */
     public Owner getOwner() {
       return owner;
     }
 
+    /**
+     * Setter for the owner
+     *
+     * @param owner the party asking the question
+     */
     public void setOwner(Owner owner) {
       this.owner=owner;
     }
@@ -75,10 +94,18 @@ public interface SOInterface {
     @SerializedName("profile_image")
     private String profileImage;
 
+    /**
+     * @return the URL to the user's avatar image
+     */
     public String getProfileImage() {
       return profileImage;
     }
 
+    /**
+     * Setter for the profile image
+     *
+     * @param profileImage the URL to the user's avatar image
+     */
     public void setProfileImage(String profileImage) {
       this.profileImage=profileImage;
     }
