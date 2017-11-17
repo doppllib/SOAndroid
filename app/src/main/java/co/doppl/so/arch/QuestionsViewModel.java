@@ -14,12 +14,17 @@ package co.doppl.so.arch;
 import android.arch.lifecycle.ViewModel;
 import org.reactivestreams.Publisher;
 import java.util.List;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
  * ViewModel for the questions that we get back from the Stack Exchange API.
  */
 public class QuestionsViewModel extends ViewModel {
+  public interface Host {
+    void setQuestions(List<Question> questions);
+  }
+
   /**
    * The most recently retrieved list of questions. We use Publisher here
    * so that we can use LiveDataReactiveStreams in the UI layer, which requires
@@ -46,5 +51,13 @@ public class QuestionsViewModel extends ViewModel {
    */
   public Publisher<List<Question>> current() {
     return current;
+  }
+
+  public void register(Host host) {
+    Repository.get()
+      .current()
+      .subscribeOn(Schedulers.io())
+      .observeOn(AndroidSchedulers.mainThread())
+      .subscribe(host::setQuestions);
   }
 }

@@ -19,11 +19,11 @@ public class Question {
   /**
    * The title of the question, as seen in lists
    */
-  public final String title;
+  private String title;
   /**
    * The URL of the avatar of the person who asked this question
    */
-  public final String ownerAvatar;
+  private String ownerAvatar;
 
   /**
    * Constructor. `Nuff said.
@@ -34,5 +34,13 @@ public class Question {
   Question(String title, String ownerAvatar) {
     this.title=title;
     this.ownerAvatar=ownerAvatar;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public String getOwnerAvatar() {
+    return ownerAvatar;
   }
 }

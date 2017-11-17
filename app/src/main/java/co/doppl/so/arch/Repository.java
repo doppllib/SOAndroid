@@ -61,10 +61,10 @@ public class Repository {
    */
   public Single<List<Question>> current() {
     return(so.recent().map(response -> {
-      List<Question> result=new ArrayList<>(response.items.size());
+      List<Question> result=new ArrayList<>(response.getItems().size());
 
-      for (SOInterface.Item item : response.items) {
-        result.add(new Question(item.title, item.owner.profileImage));
+      for (SOInterface.Item item : response.getItems()) {
+        result.add(new Question(item.getTitle(), item.getOwner().getProfileImage()));
       }
 
       return result;

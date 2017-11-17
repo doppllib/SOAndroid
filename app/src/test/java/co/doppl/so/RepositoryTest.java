@@ -17,8 +17,8 @@ public class RepositoryTest {
     assertEquals(15, result.size());
 
     for (Question q : result) {
-      assertNotNull(q.title);
-      assertTrue(q.ownerAvatar.startsWith("https://"));
+      assertNotNull(q.getTitle());
+      assertTrue(q.getOwnerAvatar().startsWith("https://"));
     }
   }
 }
