@@ -47,8 +47,6 @@ dependencies {
   implementation      "com.squareup.retrofit2:adapter-rxjava2:$retroVer"
   implementation      "android.arch.lifecycle:runtime:1.0.3"
   implementation      "android.arch.lifecycle:extensions:$archVer"
-  implementation      "android.arch.lifecycle:reactivestreams:$archVer"
-  annotationProcessor "android.arch.lifecycle:compiler:$archVer"
 
   testImplementation  "junit:junit:4.12"
 }
