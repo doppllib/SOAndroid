@@ -22,5 +22,6 @@ on the project's issue tracker, which will be used as a faux
 discussion board for this project.
 
 ## Release Notes
+- v1.0.2: updated Android Plugin to Gradle to `3.0.1`
 - v1.0.1: refactored to avoid RxJava in the UI layer
 - v1.0.0: initial release, already at 1.0.0, because YOLO
